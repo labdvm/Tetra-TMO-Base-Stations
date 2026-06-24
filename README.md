@@ -58,7 +58,7 @@ Check that the device is detected:
 # . "$HOME/.cargo/env"
 # cargo build --release (or "cargo build --release -j1" for Rpi with less then 2GB of RAM or Rpi3)
 - To install with "Asterisk"
-# cargo build --release --feature asterisk
+# cargo build --release --features asterisk
 # cp example_config/config.toml config.toml
 # nano config.toml "configure the base station"
 - Ctrl + O and Ctrl + X
