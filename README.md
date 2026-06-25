@@ -99,3 +99,9 @@ WorkingDirectory=/home/fs/flowstation
 
 ExecStart=/home/fs/flowstation/target/release/bluestation-bs /home/fs/flowstation/config.toml
 KillSignal=SIGINT
+
+# systemctl daemon-reload
+# systemctl enable --now tetra
+- systemctl start --now tetra
+- systemctl stop --now tetra
+- systemctl status --now tetra
