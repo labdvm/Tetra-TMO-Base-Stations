@@ -75,7 +75,7 @@ Check that the device is detected:
 
 9. Run Autostart
 # cd flowstation
-# cp contrib/systemd/bluestation-bs.service /etc/systemd/system/tetra.service
+# sudo cp contrib/systemd/bluestation-bs.service /etc/systemd/system/tetra.service
 # cd
 # sudo nano /etc/systemd/system/tetra.service
 - edit the "tetra.service" (in my case)
