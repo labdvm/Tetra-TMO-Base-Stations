@@ -72,3 +72,30 @@ Check that the device is detected:
 8. Update: Standard
 # git pull
 # cargo build --release 
+
+9. Run Autostart
+# cd flowstation
+# cp contrib/systemd/bluestation-bs.service /etc/systemd/system/tetra.service
+# cd
+# sudo nano /etc/systemd/system/tetra.service
+- edit the "tetra.service" (in my case)
+
+[Service]
+User=fs
+Group=fs
+Type=simple
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=73
+WorkingDirectory=/home/fs/flowstation
+
+# Reset the SXceiver/SoapySDR USB device before each start to prevent
+# stale hardware timestamp state causing "Too late to produce TX block" skips
+# on software restarts (as opposed to hard power cycles).
+# This unbinds and rebinds the USB device, forcing a clean hardware reset.
+# Adjust the USB path to match your device: find it with:
+#   udevadm info -q path -n /dev/bus/usb/$(lsusb | grep -i sxceiver | awk '{print $2"/"$4}' | tr -d ':')
+# or simply: ls /sys/bus/usb/devices/
+# ExecStartPre=/bin/sh -c 'for dev in /sys/bus/usb/devices/*/idVendor; do dir=$(dirname $dev); [ -f "$dir/authorized" ] && echo 0 > "$dir/authorized" && sleep 0.5 && echo 1 > "$dir/authorized"; done; sleep 1'
+
+ExecStart=/home/fs/flowstation/target/release/bluestation-bs /home/fs/flowstation/config.toml
+KillSignal=SIGINT
