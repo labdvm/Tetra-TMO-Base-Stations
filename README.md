@@ -105,3 +105,13 @@ Check that the device is detected:
 - systemctl start --now tetra
 - systemctl stop --now tetra
 - systemctl status --now tetra
+
+10. Update for autorun
+# systemctl stop --now tetra
+# cd flowstation
+# git pull
+# cargo build --release
+# cd
+# systemctl start --now tetra
+- or -
+# sudo reboot now
