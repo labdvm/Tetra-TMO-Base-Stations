@@ -65,6 +65,7 @@ Check that the device is detected:
 - save and close
 - sudo reboot now
 - zramctl
+  
 - To install with "Asterisk"
 # cargo build --release --features asterisk
 # cp example_config/config.toml config.toml
