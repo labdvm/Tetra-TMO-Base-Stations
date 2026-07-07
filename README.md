@@ -65,6 +65,15 @@ Check that the device is detected:
 - After configured "config.toml" make a fallback copy
 # cp config.toml config.toml.fallback
 
+- In case the compiling cannot be done with RPi/1GB then extend the Zram partition from 905MB to 2048MB:
+- cd
+- sudo nano /etc/rpi/swap.conf
+- [Zram]
+- FixedSizeMiB=2048 (uncheck)
+- save and close
+- sudo reboot now
+- zramctl
+
 7. Run:
 # cd flowstation
 # ./target/release/bluestation-bs ./config.toml
