@@ -57,14 +57,6 @@ Check that the device is detected:
 # cd flowstation
 # . "$HOME/.cargo/env"
 # cargo build --release (or "cargo build --release -j1" for Rpi with less then 2GB of RAM or Rpi3)
-- To install with "Asterisk"
-# cargo build --release --features asterisk
-# cp example_config/config.toml config.toml
-# nano config.toml "configure the base station"
-- Ctrl + O and Ctrl + X
-- After configured "config.toml" make a fallback copy
-# cp config.toml config.toml.fallback
-
 - In case the compiling cannot be done with RPi/1GB then extend the Zram partition from 905MB to 2048MB:
 - cd
 - sudo nano /etc/rpi/swap.conf
@@ -73,6 +65,13 @@ Check that the device is detected:
 - save and close
 - sudo reboot now
 - zramctl
+- To install with "Asterisk"
+# cargo build --release --features asterisk
+# cp example_config/config.toml config.toml
+# nano config.toml "configure the base station"
+- Ctrl + O and Ctrl + X
+- After configured "config.toml" make a fallback copy
+# cp config.toml config.toml.fallback
 
 7. Run:
 # cd flowstation
