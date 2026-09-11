@@ -65,14 +65,7 @@ Check that the device is detected:
 - save and close
 - sudo reboot now
 - zramctl
-##
-- To install with "Asterisk"
-# cargo build --release --features asterisk
-# cp example_config/config.toml config.toml
-# nano config.toml "configure the base station"
-- Ctrl + O and Ctrl + X
-- After configured "config.toml" make a fallback copy
-# cp config.toml config.toml.fallback
+  
 
 7. Run:
 # cd flowstation
