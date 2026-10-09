@@ -9,6 +9,7 @@ TMO BS from FlowStation
 
 TMO BS from Nexus
 # https://github.com/invictus737/nexus-bs (archived V1)
+# https://github.com/invictus737/nexus-bs2 (advanced) ...soon
 
 # Build:
 - Install FlowStation ---for sxceiver---
