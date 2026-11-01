@@ -89,12 +89,12 @@ Check that the device is detected:
 - edit the "tetra.service" (in my case)
 
 - [Service]
-- User=fs
-- Group=fs
+- User=fs (change it)
+- Group=fs (change it)
 - Type=simple
 - CPUSchedulingPolicy=fifo
 - CPUSchedulingPriority=73
-- WorkingDirectory=/home/fs/flowstation
+- WorkingDirectory=/home/fs/flowstation (/home/"change it"/flowstation
 
   # # Reset the SXceiver/SoapySDR USB device before each start to prevent
   # # stale hardware timestamp state causing "Too late to produce TX block" skips
@@ -105,7 +105,7 @@ Check that the device is detected:
   # # or simply: ls /sys/bus/usb/devices/
   # # ExecStartPre=/bin/sh -c 'for dev in /sys/bus/usb/devices/*/idVendor; do dir=$(dirname $dev); [ -f "$dir/authorized" ] && echo 0 > "$dir/authorized" && sleep 0.5 && echo 1 > "$dir/authorized"; done; sleep 1'
 
-- ExecStart=/home/fs/flowstation/target/release/bluestation-bs /home/fs/flowstation/config.toml
+- ExecStart=/home/fs/flowstation/target/release/bluestation-bs /home/fs/flowstation/config.toml (/home/"change it"/flowstation/target/release/bluestation-bs /home/"change it"/flowstation/config.toml
 - KillSignal=SIGINT
 
 # systemctl daemon-reload
