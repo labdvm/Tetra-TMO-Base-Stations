@@ -11,8 +11,8 @@ TMO BS from Bust-FlowStation
 # https://github.com/Aitorrio/bost-flowstation
 
 TMO BS from Nexus
-# https://github.com/invictus737/nexus-bs (archived V1)
-# https://github.com/invictus737/nexus-bs2 (advanced) ...soon
+# https://github.com/invictus737/nexus-bs (archived V1-tetra only)
+# https://github.com/invictus737/nexus-bs2 (Multi-Mode) ...soon ......maybe next year !?
 
 # Build:
 - Install FlowStation ---for sxceiver---
