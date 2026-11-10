@@ -1,14 +1,17 @@
 # Tetra-TMO-Base-Stations
 Tetra TMO base stations for SDR Transceivers
 
-TMO BS from BlueStation
+TMO BS from BlueStation (limited options)
 # https://github.com/MidnightBlueLabs/tetra-bluestation
 
 TMO BS from FlowStation
 # https://github.com/razvanzeces/flowstation
 
-TMO BS from Bust-FlowStation
+TMO BS from Bust-FlowStation (advanced flowstation)
 # https://github.com/Aitorrio/bost-flowstation
+
+Multi-Mode TetraSpot (Tetra-TMO, DMR TierII-III, P25 Phase-1, NXDN, D-Star, M17, FM-Analog)
+# https://update.tetra-poland.pl/
 
 TMO BS from Nexus
 # https://github.com/invictus737/nexus-bs (archived V1-tetra only)
@@ -28,16 +31,7 @@ TMO BS from Nexus
 3. Install Rust:
 # curl https://sh.rustup.rs -sSf | sh
 
-4. RPi-setup:
-"enable SPI and I2C"
-# sudo raspi-config > Interface Options > "enable and reboot the rpi"
-# sudo nano /boot/firmware/config.txt
-- "add this param if the eeprom cannot be recognized"
-# dtparam=i2c_vc=on
-- Ctrl + O and Ctrl + X
-- Reboot the Rpi "sudo reboot now"
-
-5. Install SoapySX:
+4. Install SoapySX:
 # cd
 # git clone "https://github.com/tejeez/sxxcvr.git"
 # cd sxxcvr/SoapySX
@@ -55,7 +49,7 @@ Check that the device is detected:
 # ls -l /proc/device-tree/hat
 # SoapySDRUtil --probe=driver=sx
 
-6. Install The FlowStation:
+5. Install The FlowStation:
 # cd
 # git clone https://github.com/razvanzeces/flowstation
 # cd flowstation
@@ -63,7 +57,7 @@ Check that the device is detected:
 # cargo build --release (or "cargo build --release -j1" for Rpi with less then 2GB of RAM or Rpi3)
 # cp example_config/config.toml config.toml
 # nano config.toml (configure the base station) (https://bluestation.russel053.com/)
-- In case the compiling cannot be done with RPi/1GB then extend the Zram partition from 905MB to 2048MB:
+- In case the compiling cannot be done with RPi3/1GB then extend the Zram partition from 905MB to 2048MB:
 - cd
 - sudo nano /etc/rpi/swap.conf
 - [Zram]
@@ -73,15 +67,15 @@ Check that the device is detected:
 - zramctl
   
 
-7. Run:
+6. Run:
 # cd flowstation
 # ./target/release/bluestation-bs ./config.toml
 
-8. Update: Standard
+7. Update: Standard
 # git pull
 # cargo build --release 
 
-9. Run Autostart
+8. Run Autostart
 # cd flowstation
 # sudo cp contrib/systemd/bluestation-bs.service /etc/systemd/system/tetra.service
 # cd
@@ -114,7 +108,7 @@ Check that the device is detected:
 - systemctl stop --now tetra
 - systemctl status --now tetra
 
-10. Update for autorun
+9. Update for autorun
 # systemctl stop --now tetra
 # cd flowstation
 # git pull
