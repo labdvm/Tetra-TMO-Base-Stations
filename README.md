@@ -1,5 +1,5 @@
 # Tetra-TMO-Base-Stations
-Tetra TMO base stations for SDR Transceivers
+- Tetra TMO base stations for SDR Transceivers
 
 TMO BS from BlueStation (limited options)
 # https://github.com/MidnightBlueLabs/tetra-bluestation
