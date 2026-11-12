@@ -10,6 +10,9 @@ TMO BS from FlowStation
 TMO BS from Bust-FlowStation (advanced flowstation)
 # https://github.com/Aitorrio/bost-flowstation
 
+TMO BS from YO9ION (modified Flowstation)
+# https://github.com/YO9ION/fs2-kit
+
 Multi-Mode TetraSpot (Tetra-TMO, DMR TierII-III, P25 Phase-1, NXDN, D-Star, M17, FM-Analog)
 # https://update.tetra-poland.pl/
 
